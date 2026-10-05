@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VALEN — Portal de historias</title>
+<title>VALENQVQ — Portal de historias</title>
 <style>
 :root{
   --bg:#000;
@@ -64,7 +64,7 @@ nav button:hover{color:#fff}
 .media-add-bar{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
 .media-builder-title{font-size:12px;color:#777;text-transform:uppercase;letter-spacing:1.5px;margin:18px 0 9px}
 .media-builder-list{display:flex;flex-direction:column;gap:10px}
-.media-item{display:grid;grid-template-columns:70px 1fr auto;align-items:center;gap:12px;padding:10px;border:1px solid #292929;border-radius:10px;background:#080808}
+.youtube-page{width:100%;aspect-ratio:16/9;border:0;display:block;background:#000}.youtube-page-wrap{width:100%;max-width:1100px;margin:0 auto 24px;border-radius:10px;overflow:hidden;background:#000}.youtube-page-wrap iframe{width:100%;aspect-ratio:16/9;border:0;display:block}.media-item{display:grid;grid-template-columns:70px 1fr auto;align-items:center;gap:12px;padding:10px;border:1px solid #292929;border-radius:10px;background:#080808}
 .media-thumb{width:70px;height:70px;border-radius:7px;overflow:hidden;background:#111;display:grid;place-items:center;color:#666;font-size:24px}
 .media-thumb img,.media-thumb video{width:100%;height:100%;object-fit:cover;display:block}
 .media-item-name{min-width:0}.media-item-name strong{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.media-item-name span{font-size:12px;color:#666}
@@ -190,11 +190,21 @@ footer{border-top:1px solid var(--line);padding:35px;text-align:center;color:#66
 .donor-section{padding:80px 20px 100px;max-width:1100px;margin:auto;text-align:center}.section-kicker{letter-spacing:.2em;font-size:.72rem;opacity:.55}.section-note{opacity:.65}.donor-podium{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:end;margin-top:32px}.donor-card{background:#090909;border:1px solid #282828;border-radius:24px;padding:18px;overflow:hidden}.donor-1{padding-bottom:24px}.donor-rank{font-size:2rem;font-weight:800;margin-bottom:14px}.donor-media{position:relative;aspect-ratio:1;border-radius:18px;overflow:hidden;background:#111}.donor-video{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}.donor-avatar{position:absolute;left:14px;bottom:14px;width:62px;height:62px;border-radius:50%;object-fit:cover;border:2px solid #fff;background:#151515}.donor-info{padding-top:14px}.donor-info h3{margin:0 0 6px}.donor-info a{color:#fff;text-decoration:none;opacity:.7}.donor-admin-note{max-width:760px;margin:28px auto 0;padding:12px 16px;border:1px dashed #292929;border-radius:14px;opacity:.55;font-size:.82rem;line-height:1.5}@media(max-width:720px){.donor-podium{grid-template-columns:1fr}}
 </style>
 
+
+<style id="hide-donor-avatars">
+.donor-avatar,
+.donor-avatar-hidden,
+.donor-card .avatar,
+.donor-card .donor-avatar,
+.donor-card img.avatar {
+  display:none !important;
+}
+</style>
 </head>
 <body>
 
 <header>
-  <div class="logo" id="siteLogo">VALEN</div>
+  <div class="logo" id="siteLogo">VALENQVQ</div>
   <nav>
     <button onclick="go('inicio')">Inicio</button>
     <button onclick="go('historias')">Historias</button>
@@ -209,7 +219,7 @@ footer{border-top:1px solid var(--line);padding:35px;text-align:center;color:#66
     <video id="heroVideo" muted autoplay loop playsinline preload="metadata"></video>
   </div>
   <div class="hero-content">
-    <div class="eyebrow" id="heroEyebrow">UNA HISTORIA DE VALEN</div>
+    <div class="eyebrow" id="heroEyebrow">UNA HISTORIA DE VALENQVQ</div>
     <h1 id="heroTitle">1% of Luck</h1>
     <p id="heroDescription">Un mundo creado desde mi imaginación.</p>
     <div class="hero-music" id="heroMusic">
@@ -257,7 +267,7 @@ footer{border-top:1px solid var(--line);padding:35px;text-align:center;color:#66
 
 </main>
 
-<footer>© 2026 Valen Studio · Historias creadas con cariño.</footer>
+<footer>© Valenqvq · Historias poco comunes.</footer>
 
 <div class="reader" id="reader">
   <div class="reader-top"><strong id="readerStory"></strong><button class="btn" onclick="closeReader()">✕ Cerrar</button></div>
@@ -271,7 +281,7 @@ footer{border-top:1px solid var(--line);padding:35px;text-align:center;color:#66
 <div class="admin-screen" id="adminScreen">
   <div id="loginView" class="login">
     <div class="login-box">
-      <h2>Panel privado · VALEN ADMIN</h2>
+      <h2>Panel privado · VALENQVQ ADMIN</h2>
       <p>Esta versión local es una maqueta. Al publicar la web, el acceso de administradora se conectará a autenticación segura de servidor.</p>
       <div class="field"><label>Usuario</label><input id="loginUser" autocomplete="username"></div>
       <div class="field"><label>Contraseña</label><input id="loginPass" type="password" autocomplete="current-password"></div>
@@ -284,7 +294,7 @@ footer{border-top:1px solid var(--line);padding:35px;text-align:center;color:#66
 
   <div id="adminView" class="hidden">
     <div class="admin-top">
-      <strong>VALEN · ADMIN</strong><span class="admin-badge">ADMINISTRADORA</span>
+      <strong>VALENQVQ · ADMIN</strong><span class="admin-badge">ADMINISTRADORA</span>
       <div class="buttons">
         <button class="btn" onclick="closeAdmin()">Ver web</button>
         <button class="btn" onclick="logout()">Cerrar sesión</button>
@@ -365,10 +375,11 @@ footer{border-top:1px solid var(--line);padding:35px;text-align:center;color:#66
               <div class="field"><label>Portada del capítulo (video)</label><input id="chapterCoverVideo" type="file" accept="video/*" onchange="previewFile(this,'chapterCoverVideoPreview')"><video id="chapterCoverVideoPreview" class="file-preview hidden" controls></video></div>
               <div class="field full">
                 <label>Contenido del capítulo</label>
-                <div class="notice">Añade cada elemento como tú quieras. Primero puedes poner una imagen, después un video, después otra imagen, etc. No hay un número máximo fijado: sigue pulsando los botones para añadir todos los elementos que necesites.</div>
+                <div class="notice">Añade cada elemento como tú quieras. Puedes mezclar imágenes, videos y videos de YouTube en el orden que quieras. Los videos de YouTube se reproducen directamente dentro de la página.</div>
                 <div class="media-add-bar">
                   <button type="button" class="btn" onclick="addChapterMedia('image')">＋ Añadir imagen</button>
                   <button type="button" class="btn" onclick="addChapterMedia('video')">＋ Añadir video</button>
+                  <button type="button" class="btn" onclick="addYouTubeChapterMedia()">＋ Añadir YouTube</button>
                 </div>
                 <input id="chapterImagePicker" type="file" accept="image/*" class="hidden" onchange="receiveChapterMedia(this,'image')">
                 <input id="chapterVideoPicker" type="file" accept="video/*" class="hidden" onchange="receiveChapterMedia(this,'video')">
@@ -416,12 +427,17 @@ footer{border-top:1px solid var(--line);padding:35px;text-align:center;color:#66
 <script>
 const DB_KEY = "valen_portal_demo_v1";
 let state = loadState();
+// Persistent local storage layer: IndexedDB keeps large images, videos and audio without the small localStorage quota.
+const IDB_NAME = "valen_portal_files_v2";
+const IDB_STORE = "app";
+let idbReady = null;
 let selectedStory = Object.keys(state.stories)[0];
 let editingStoryId = null;
 let editingChapterId = null;
 let pendingChapterFiles = [];
 let pendingStoryMusic = [];
 let currentMusicIndex = 0;
+hydrateStateFromIndexedDB();
 
 // Compatibilidad con versiones anteriores del prototipo.
 if(!Array.isArray(state.donors)) state.donors=[];
@@ -431,8 +447,8 @@ state.donors=state.donors.slice(0,3).map(d=>({name:d.name||"",instagram:d.instag
 function defaultState(){
   return {
     settings:{
-      logo:"VALEN",
-      eyebrow:"UNA HISTORIA DE VALEN",
+      logo:"VALENQVQ",
+      eyebrow:"UNA HISTORIA DE VALENQVQ",
       instagram:"",
       tiktok:"",
       youtube:""
@@ -484,10 +500,49 @@ function loadState(){
   }catch(e){}
   return defaultState();
 }
-function saveState(){
-  try{localStorage.setItem(DB_KEY,JSON.stringify(state));}
-  catch(e){alert("El navegador no pudo guardar todo. En la web real usaremos almacenamiento del servidor.");}
-  renderAll();
+function openIDB(){
+  if(idbReady)return idbReady;
+  idbReady=new Promise((resolve,reject)=>{
+    if(!window.indexedDB)return reject(new Error("IndexedDB no disponible"));
+    const req=indexedDB.open(IDB_NAME,1);
+    req.onupgradeneeded=()=>{if(!req.result.objectStoreNames.contains(IDB_STORE))req.result.createObjectStore(IDB_STORE)};
+    req.onsuccess=()=>resolve(req.result);
+    req.onerror=()=>reject(req.error||new Error("IndexedDB error"));
+  });
+  return idbReady;
+}
+async function hydrateStateFromIndexedDB(){
+  try{
+    const db=await openIDB();
+    const data=await new Promise((resolve,reject)=>{
+      const tx=db.transaction(IDB_STORE,"readonly"), req=tx.objectStore(IDB_STORE).get("state");
+      req.onsuccess=()=>resolve(req.result||null); req.onerror=()=>reject(req.error);
+    });
+    if(data && data.state){
+      state=data.state;
+      // Compatibility with older versions.
+      if(!Array.isArray(state.donors))state.donors=[];
+      while(state.donors.length<3)state.donors.push({name:"",instagram:"",avatar:"",video:""});
+      state.donors=state.donors.slice(0,3).map(d=>({name:d.name||"",instagram:d.instagram||"",avatar:d.avatar||"",video:d.video||""}));
+      renderAll();
+    }
+  }catch(e){ console.warn("No se pudo leer el almacenamiento persistente",e); }
+}
+async function saveState(){
+  // Keep a small compatibility copy in localStorage when possible, but use IndexedDB as the real local store.
+  try{localStorage.setItem(DB_KEY,JSON.stringify(state));}catch(e){}
+  try{
+    const db=await openIDB();
+    await new Promise((resolve,reject)=>{
+      const tx=db.transaction(IDB_STORE,"readwrite");
+      tx.objectStore(IDB_STORE).put({state:structuredClone?structuredClone(state):JSON.parse(JSON.stringify(state))},"state");
+      tx.oncomplete=resolve; tx.onerror=()=>reject(tx.error); tx.onabort=()=>reject(tx.error);
+    });
+    renderAll();
+  }catch(e){
+    console.error(e);
+    alert("No se pudo guardar el contenido en este navegador. Prueba con Chrome/Edge actualizado y vuelve a intentarlo.");
+  }
 }
 function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),1800)}
 function go(id){document.getElementById(id)?.scrollIntoView({behavior:"smooth"})}
@@ -665,6 +720,11 @@ function openChapter(i){
     if(p.type==="video"){
       const v=document.createElement("video");v.className="page-video";v.controls=true;v.playsInline=true;v.preload="metadata";v.src=p.data;v.setAttribute("aria-label","Video del capítulo");pages.appendChild(v);
     }
+    if(p.type==="youtube"){
+      const wrap=document.createElement("div");wrap.className="youtube-page-wrap";
+      const iframe=document.createElement("iframe");iframe.className="youtube-page";iframe.src=p.data;iframe.title="Video de YouTube";iframe.loading="lazy";iframe.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";iframe.allowFullscreen=true;
+      wrap.appendChild(iframe);pages.appendChild(wrap);
+    }
   });
   r.classList.add("open");document.body.style.overflow="hidden";r.scrollTop=0;
 }
@@ -697,7 +757,7 @@ function fillAppearance(){
   setVal("setLogo",s.logo);setVal("setEyebrow",s.eyebrow);setVal("setInstagram",s.instagram);setVal("setTiktok",s.tiktok);setVal("setYoutube",s.youtube);
 }
 function saveAppearance(){
-  state.settings.logo=val("setLogo")||"VALEN";state.settings.eyebrow=val("setEyebrow");
+  state.settings.logo=val("setLogo")||"VALENQVQ";state.settings.eyebrow=val("setEyebrow");
   state.settings.instagram=val("setInstagram");state.settings.tiktok=val("setTiktok");state.settings.youtube=val("setYoutube");
   saveState();toast("Apariencia guardada");
 }
@@ -777,12 +837,15 @@ function renderChapterMediaList(){
     d.className="media-item";
     const thumb=p.type==="video"
       ? `<video src="${p.data}" muted playsinline></video>`
-      : `<img src="${p.data}" alt="">`;
+      : p.type==="youtube"
+        ? `<div style="width:70px;height:46px;display:grid;place-items:center;background:#151515;color:#fff;font-size:22px">▶</div>`
+        : `<img src="${p.data}" alt="">`;
+    const label=p.type==="video"?"VIDEO":p.type==="youtube"?"YOUTUBE":"IMAGEN";
     d.innerHTML=`
       <div class="media-thumb">${thumb}</div>
       <div class="media-item-name">
         <strong>${i+1}. ${escapeHtml(p.name||("Elemento "+(i+1)))}</strong>
-        <span>${p.type==="video"?"VIDEO":"IMAGEN"}</span>
+        <span>${label}</span>
       </div>
       <div class="media-item-actions">
         <button type="button" class="small-btn media-move" onclick="moveChapterMedia(${i},-1)" title="Subir">↑</button>
@@ -792,7 +855,7 @@ function renderChapterMediaList(){
     el.appendChild(d);
   });
   if(!pendingChapterFiles.length){
-    el.innerHTML='<div class="notice">Todavía no hay elementos. Pulsa «＋ Añadir imagen» o «＋ Añadir video».</div>';
+    el.innerHTML='<div class="notice">Todavía no hay elementos. Pulsa «＋ Añadir imagen», «＋ Añadir video» o «＋ Añadir YouTube».</div>';
   }
 }
 
@@ -800,6 +863,32 @@ function addChapterMedia(type){
   const picker=document.getElementById(type==="video"?"chapterVideoPicker":"chapterImagePicker");
   picker.value="";
   picker.click();
+}
+
+function youtubeEmbedUrl(input){
+  try{
+    const raw=(input||"").trim();
+    if(!raw)return "";
+    const u=new URL(raw);
+    let id="";
+    if(u.hostname.includes("youtu.be")) id=u.pathname.split("/").filter(Boolean)[0]||"";
+    else if(u.hostname.includes("youtube.com")){
+      if(u.pathname==="/watch") id=u.searchParams.get("v")||"";
+      else if(u.pathname.startsWith("/shorts/")) id=u.pathname.split("/")[2]||"";
+      else if(u.pathname.startsWith("/embed/")) id=u.pathname.split("/")[2]||"";
+    }
+    if(!id)return "";
+    return "https://www.youtube.com/embed/"+encodeURIComponent(id);
+  }catch(e){return "";}
+}
+
+function addYouTubeChapterMedia(){
+  const url=prompt("Pega aquí el enlace de tu video de YouTube:");
+  if(!url)return;
+  const embed=youtubeEmbedUrl(url);
+  if(!embed){alert("Ese enlace no parece ser un video de YouTube válido. Usa un enlace de youtube.com o youtu.be.");return;}
+  pendingChapterFiles.push({type:"youtube",data:embed,name:"YouTube"});
+  renderChapterMediaList();
 }
 
 async function receiveChapterMedia(input,type){
@@ -847,7 +936,7 @@ function editChapter(i){
   pendingChapterFiles=(c.pages||[]).map((p,j)=>({
     type:p.type,
     data:p.data,
-    name:p.name||((p.type==="video"?"Video ":"Imagen ")+(j+1))
+    name:p.name||((p.type==="video"?"Video ":p.type==="youtube"?"YouTube ":"Imagen ")+(j+1))
   }));
   renderChapterMediaList();
 }
@@ -955,9 +1044,9 @@ initHeroParallax();
 </script>
 
 <section id="donadores" class="donor-section">
-  <div class="section-kicker">APOYO A VALEN</div>
+  <div class="section-kicker">APOYO A VALENQVQ</div>
   <h2>Top 3 donadores</h2>
-  <p class="section-note">Un pequeño espacio de agradecimiento para quienes apoyan este mundo.</p>
+  <p class="section-note">Un pequeño espacio de agradecimiento para quienes apoyan estas creaciones ⎚⩊⎚</p>
   <div class="donor-podium">
     <article class="donor-card donor-1"><div class="donor-rank">1</div><div class="donor-media"><video class="donor-video" autoplay muted loop playsinline preload="metadata"></video><img class="donor-avatar" alt="Avatar del donador 1"></div><div class="donor-info"><h3>Primer puesto</h3><a href="#" target="_blank" rel="noopener">@instagram</a></div></article>
     <article class="donor-card donor-2"><div class="donor-rank">2</div><div class="donor-media"><video class="donor-video" autoplay muted loop playsinline preload="metadata"></video><img class="donor-avatar" alt="Avatar del donador 2"></div><div class="donor-info"><h3>Segundo puesto</h3><a href="#" target="_blank" rel="noopener">@instagram</a></div></article>
